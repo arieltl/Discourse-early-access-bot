@@ -1,12 +1,8 @@
 from datetime import datetime
-from email import header
 import json
-from os import system
-import re
 import requests
 import dateutil.parser
 from  datetime import datetime
-import time
 
 with open("config.json") as file:
 	config = json.load(file)
