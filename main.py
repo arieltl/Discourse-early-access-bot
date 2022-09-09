@@ -18,5 +18,5 @@ for topic in response.json()["topic_list"]["topics"]:
 	date = dateutil.parser.isoparse(topic["created_at"])
 	now = datetime.now().astimezone()
 	delta = now-date
-	if delta.days>10:
+	if delta.days>config["days-since-creation"]:
 		requests.put(url+f"/t/-/{topic['id']}.json",headers=headers,data=data)
